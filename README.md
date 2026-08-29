@@ -1,11 +1,11 @@
 ---
 layout: home
-title: EE211 25Fall
+title: EE211 26Fall
 nav_exclude: true
 permalink: /:path/
 seo:
   type: Course
-  name: EE211 25Fall
+  name: EE211 26Fall
 ---
 
 # EE211 - Robotic Perception and Intelligence
@@ -21,9 +21,14 @@ This course aims to introduce the commonly used sensors and their working princi
 - **Credit Hours:** 64 
 - **Lecture Location:** room 123, Lecture Hall 1 
 - **Lab Session Location:** room 120, South Tower, College of Engineering
-- **Course Staff:** [Check Here](https://rpai-lab.github.io/EE211-25Fall/staff/)
+- **Course Staff:** [Check Here]({{ '/staff/' | relative_url }})
 <!-- - **QQ Group:** 487594133 -->
  
-## Course Materials
+<!-- ## Course Materials -->
+<!--  -->
+<!-- [Check Here]({{ '/course-materials/' | relative_url }}) -->
 
-[Check Here](https://rpai-lab.github.io/EE211-25Fall/course-materials/)
+## Previous Course Websites
+
+- [2025 Fall](https://rpai-lab.github.io/EE211-25Fall/)
+- [2024 Fall](https://rpai-lab.github.io/EE211-24Fall/)
