@@ -31,7 +31,7 @@ schedule:
       - name: Lab
         start: 10:20 AM
         end: 12:10 PM
-        location: 120, South Tower, College of Engineering
+        location: 433, South Tower, College of Engineering
       - name: Office Hour
         start: 2:00 PM
         end: 4:00 PM
