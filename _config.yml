@@ -19,7 +19,7 @@ description: Website for Course EE211
 author: Siyuan Wang
 baseurl: '/EE211-26Fall' # the subpath of your site, e.g. /blog
 url: 'https://github.com/RPAI-Lab' # the base hostname & protocol for your site, e.g. http://example.com
-exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "dev-readme.md", "preview.sh"]
+exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "dev-readme.md", "preview.sh", "vendor", "_modules_pending"]
 
 # Theme settings
 remote_theme: just-the-docs/just-the-docs@v0.9.0
