@@ -6,7 +6,7 @@ nav_exclude: true
 ---
 
 
-[← Back](https://rpai-lab.github.io/EE211-25Fall/course-materials/)
+[← Back]({{ '/course-materials/' | relative_url }})
 
 <br>
 
