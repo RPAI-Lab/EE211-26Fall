@@ -25,8 +25,7 @@ nav_exclude: true
 
 > Please follow the TA's demonstration in class
 
-- `APT`: software package manager
-- `Bash`: a widely used shell interface
+📑 [Shell Command Cheat Sheet]({{ '/assets/lab/week2/week2-shell-command-reference' | relative_url }})
 
 ## 3. Install ROS2 Humble
 
