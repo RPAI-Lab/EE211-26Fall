@@ -27,6 +27,8 @@ Single-disk laptop: you need a USB drive. Two-disk laptop (two physical drives):
 
 ### Step 3: Shrink a partition for Ubuntu
 
+**Before you shrink anything, check the "About BitLocker" section at the end of this page — see if your disk is encrypted.**
+
 Minimum 64GB. 256GB is safer.
 
 1. Right-click the Windows icon (bottom-left) → Disk Management
@@ -148,6 +150,22 @@ Dual boot defaults to Ubuntu. To switch:
    <img src="{{ '/assets/lab/week2/imgs/dualboot/22.jpg' | relative_url }}" alt="update-grub output" style="zoom:60%;" />
 
 Reboot — the GRUB menu will default to Windows Boot Manager.
+
+### About BitLocker (if your disk is encrypted)
+
+A lot of laptops (especially ones that shipped with Windows 11) quietly turn on "Device Encryption" (consumer BitLocker) by default — you may not even know it's on. If you don't deal with this, the dual-boot install can leave Windows stuck on a recovery screen at next boot, asking for a 48-digit recovery key you probably don't have handy.
+
+Check before you install: Settings → Privacy & security → Device encryption. If it's on:
+
+1. **Save your recovery key first**: open `https://aka.ms/myrecoverykey` in a browser (sign in with the Microsoft account tied to this PC), and save/screenshot the key somewhere you can reach it (your phone).
+2. **Suspend BitLocker protection** — no need to fully decrypt (faster, good enough): open PowerShell as Administrator and run:
+   ```
+   manage-bde -protectors -disable C:
+   ```
+   Or the GUI way: Control Panel → BitLocker Drive Encryption → Suspend protection.
+3. Once dual boot is installed and Windows boots fine, you can turn protection back on from the same place.
+
+Skip this and the worst case is Windows won't boot at all until you recover it with that key — so step 1 is always saving the key before anything else, not after something goes wrong.
 
 ### References
 
