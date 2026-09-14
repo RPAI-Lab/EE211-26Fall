@@ -16,18 +16,19 @@ nav_exclude: true
 ```bash
 touch test.py      # create an empty file; if it already exists, just update its modified time
 ls                  # list the current directory's contents
+rm test.py          # delete a file
 ls -l               # add detail (permissions, size, modified time); aliased to ll on many systems
 ls -a               # also show hidden files (dotfiles like .bashrc)
 ls -la              # both of the above together
-rm test.py          # delete a file
+ll
+ls .bashrc
 ```
 
 ```bash
 mkdir ee211                 # create a folder
 cd ee211                     # enter the folder (change directory)
-cd ..                        # go up one level
-cd                            # no argument: jump straight back to your home directory, ~
-mkdir -p ee211/week2_1      # create nested directories in one shot, no need to mkdir the parent first
+cd ..                        # go back up one level (.. = parent directory)
+mkdir -p ee211/week2         # create nested directories in one shot, no need to mkdir the parent first
 rm -r ee211                  # delete a non-empty folder (-r = recursive)
 ```
 
@@ -39,11 +40,19 @@ mv test.py test2.py          # rename a file
 ```
 
 ```bash
-pwd    # print the full path of where you currently are (print working directory)
+ls /                            # the root — the top of the filesystem
+ls ~                            # your home directory (equal to /home/<your-username>)
+ls ..                           # the parent directory, one level up
+ls .                            # the current directory
 ```
 
-- `~` is your home directory, equal to `/home/<your-username>`. Walking up with `cd ..` repeatedly: the level above `~` is `/home`, and the level above that is `/` (the root — there's nothing further up).
-- `cd` can take an absolute path (written out in full from `/`) or a relative path (relative to where you are now). `.` means the current directory — the common use is `./script-name`.
+```bash
+pwd    # print the full path of where you currently are (print working directory)
+cd                             # no argument: jump straight back to your home directory, ~
+cd ~/ee211                     # same folder via ~
+cd ./ee211                     # or `cd ee211`, relative path (relative to where you are now)
+cd /home/<your-username>/ee211 # absolute path (written out in full from /)
+```
 
 ## Terminal operations + shortcuts
 
@@ -109,13 +118,6 @@ Switching to the Tsinghua mirror (see the [Tsinghua open-source mirror help page
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak   # back up before touching anything
 sudo vim /etc/apt/sources.list                            # open the config file, paste in the Tsinghua mirror config to replace the contents, :wq to save and quit
 sudo apt update                                            # pick up the new source
-```
-
-If `apt update` errors out or the package list looks wrong after switching, clear the stale local index cache and retry:
-
-```bash
-sudo rm -rf /var/lib/apt/lists/*
-sudo apt update
 ```
 
 **Checkpoint**: after switching mirrors, install a small tool — if a graphical window pops up, that confirms both the mirror switch and your display setup are working.
