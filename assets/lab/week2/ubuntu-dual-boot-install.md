@@ -27,7 +27,7 @@ Single-disk laptop: you need a USB drive. Two-disk laptop (two physical drives):
 
 ### Step 3: Shrink a partition for Ubuntu
 
-**Before you shrink anything, check the "About BitLocker" section at the end of this page — see if your disk is encrypted.**
+**Before you shrink anything, check the "About BitLocker" and "About Secure Boot" sections at the end of this page — do both checks by default.**
 
 Minimum 64GB. 256GB is safer.
 
@@ -166,6 +166,21 @@ Check before you install: Settings → Privacy & security → Device encryption.
 3. Once dual boot is installed and Windows boots fine, you can turn protection back on from the same place.
 
 Skip this and the worst case is Windows won't boot at all until you recover it with that key — so step 1 is always saving the key before anything else, not after something goes wrong.
+
+### About Secure Boot (check this before you install, don't wait for the error)
+
+Turn Secure Boot off before you install, not after hitting an error. It can reject Ubuntu's bootloader — you'll see "Verification failed: (0x1A) Security Violation" and can't boot in. Cause: older shim vs. newer firmware, or a 2023 Windows update that revoked older shim versions. Not worth guessing which applies — just turn it off now.
+
+1. Boot into BIOS/UEFI: same path as Step 4, into "Advanced startup", but this time pick "Troubleshoot" → UEFI Firmware Settings (not "Use a device")
+2. Find Secure Boot under the Boot or Security tab and set it to Disabled:
+
+   <img src="{{ '/assets/lab/week2/imgs/dualboot/web-secure-boot-bios.jpg' | relative_url }}" alt="Disabling Secure Boot in BIOS" style="zoom:60%;" />
+
+   (Source: [It's FOSS](https://itsfoss.com/disable-secure-boot-windows/) — this is a different motherboard's screen as an example; where Secure Boot lives and what it looks like varies by manufacturer, but the steps are the same)
+
+3. Save and exit (usually F10, or Save & Exit from the menu), then go back to Step 3 and continue
+
+No downside for this course or Windows — it's just one less bootloader check. Already hit the error? Same steps, then reboot — no reinstall needed.
 
 ### References
 
