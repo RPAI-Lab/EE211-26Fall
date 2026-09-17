@@ -187,3 +187,4 @@ No downside for this course or Windows — it's just one less bootloader check. 
 - Stuck? Video: [8-min real-machine dual boot install (Bilibili)](https://www.bilibili.com/video/BV1hL411r7p2/)
 - Want to remove the dual boot later: [Uninstalling Windows10/Ubuntu dual boot (Bilibili)](https://www.bilibili.com/video/BV1554y1n7zv/)
 - Text version of Steps 3-4: [Installing Ubuntu dual boot without a USB drive](https://www.owenyoung.com/blog/windows-10-ubuntu-22-dual-system-without-usb-flash-drive)
+- For other Ubuntu/ROS issues, worth a search: [Prof. Wang Jiankun's blog](https://blog.csdn.net/wangjiankun_ls)
