@@ -44,13 +44,5 @@ nav_exclude: true
 <!-- </p> -->
 
 <br>
-<br>
-
-
-📹 [video recording - part 1](https://meeting.tencent.com/crm/KwBvrjBn6e)
-
-📹 [video recording - part 2](https://meeting.tencent.com/crm/2aZL3qJ9af)
-
-<br>
 
 <br>
