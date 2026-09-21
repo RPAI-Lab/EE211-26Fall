@@ -9,9 +9,9 @@ nav_exclude: true
 
 <br>
 
-# Shell Commands & ROS2 Installation
+# Shell Commands
 
-> Last Update: 2026-9-19
+> Last Update: 2026-9-22
 
 <br>
 
@@ -28,12 +28,6 @@ nav_exclude: true
 📹 [video recording](https://meeting.tencent.com/crm/K0kL9P50f1)
 
 📑 [Shell Command Cheat Sheet]({{ '/assets/lab/week2/week2-shell-command-reference' | relative_url }})
-
-## 3. Install ROS2 Humble
-
-- Install **ros2 humble** (bound to Ubuntu 22.04).
-- [tsinghua ros2 mirror](https://mirror.tuna.tsinghua.edu.cn/help/ros2/) · [ustc ros2 mirror](https://mirrors.ustc.edu.cn/help/ros2.html)
-- Official: [check here](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)
 
 <br>
 
