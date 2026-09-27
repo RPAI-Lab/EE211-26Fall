@@ -5,55 +5,62 @@ description: Robot Manual, written by Jielin Wu.
 nav_exclude: true
 ---
 
-[← Back](https://rpai-lab.github.io/EE211-25Fall/assets/week9/week9-page)
+[← Back]({{ '/course-materials/' | relative_url }})
 
 <br>
 
-# 机器人使用规范
+# Robot Usage Guidelines
 
-> Last Update: 2024-10-11
+> Last Update: 2026-9-26
 
 <br>
 
-## 机器人配置
-本次项目使用的机器人为TurtleBot4改装小车，已加装激光雷达、云台和深度相机等配件，以满足项目需求。
+## Robot Configuration
+The robot used in this project is a modified TurtleBot4[^tb4], built on a Create3[^create3] base, fitted with a LiDAR[^lidar], a pan-tilt mount, an arm[^arm], an IMU[^imu], and a depth camera[^camera]. A NUC sits on top as the onboard computer, running Ubuntu and ROS2.
 
-## 管理与维护
-- 每组将分配一个改装小车，直至项目结束，各组需负责保管和维护。
-- 非特殊情况下，不得交换使用。
-- 未经许可，不得将小车带离120实验室。
-- 如有损坏，需根据损坏情况确定赔偿责任（正常使用耗损除外）。
+<img src="{{ '/assets/project/imgs/platform-diagram.jpg' | relative_url }}" alt="labeled robot platform diagram" style="zoom:50%;" />
 
-## 充电与使用
-- 小车配备底盘充电器（充电桩）和NUC电池充电器（普通适配器）。
-- 上下位机需分开充电。
-- 机器人充电时间较长，请每日使用完毕后及时充电。
-- 充电位置位于机器人摆放处，已配备足够充电口。
+## Management & Maintenance
+- Each group is assigned one modified robot for the duration of the project and is responsible for keeping and maintaining it.
+- Do not swap robots between groups except in special circumstances.
+- Do not take the robot out of the lab (room 433, South Tower, College of Engineering) without permission.
+- Any damage will be assessed for compensation on a case-by-case basis (normal wear from regular use excluded).
 
-## 开机与调试
-- 开机顺序：上位机开机时，先打开底盘上的按压按钮，再打开上位机nuc的电源；下位机开机需要把机器人底盘放到充电桩上等待语音提示开机（灯光变为白色，具体查看厂家guidance，并且伴随音乐表示底盘启动）。
-- 机器人启动后，可进入NUC系统进行直接调试，或使用NoMachine进行远程调试（推荐）。
-- 调试过程中请注意安全。
+## Power-On & Charging
+- Power-on order: press the power button on the chassis first, or just place it on the charging dock — the light ring spins white while the chassis boots, and a "happy sound" plays once it's ready.[^light-ring] The NUC has its own separate power button[^manufacturer-guide]; press that next and give the NUC its own time to finish booting Ubuntu before you try to connect — the chassis light ring only tells you the chassis is ready, not the NUC.
+- The robot comes with a charging dock for the chassis and a separate charger (standard adapter) for the NUC battery.
+- Charge the NUC and the chassis separately.
+- Charging takes a while, so plug the robot in promptly after each day's use.
+- Charging stations are set up where the robots are stored, with enough outlets for all of them.
+
+<img src="{{ '/assets/project/imgs/nuc-power-button.jpg' | relative_url }}" alt="NUC power button" style="zoom:50%;" />
+<img src="{{ '/assets/project/imgs/chassis-power-button.jpg' | relative_url }}" alt="chassis power button" style="zoom:50%;" />
+<img src="{{ '/assets/project/imgs/light-ring.gif' | relative_url }}" alt="chassis light ring spinning white during boot" style="zoom:50%;" />
+<img src="{{ '/assets/project/imgs/robot-on-dock.jpg' | relative_url }}" alt="robot placed on charging dock" style="zoom:50%;" />
+<img src="{{ '/assets/project/imgs/chargers.jpg' | relative_url }}" alt="chassis dock and NUC charger side by side" style="zoom:50%;" />
+
+## Use & Debugging
+- To debug: ssh into the NUC first (lets everyone in your group connect at once); NoMachine if you need a GUI; borrowing a monitor from your TA is the last resort.[^remote-connection]
+- Be careful about safety while debugging.
 
 <span style="color: red; font-size: 18px">
     <strong>
 <i>
- **安全提示**
+ **Safety Notice**
 </i>
     </strong>
 </span> 
 
-> 在开始调试前，请确保周围环境空旷，并已熟悉Ubuntu和ROS2的基本指令。否则，可能导致机器人硬件和软件的重复维修。
+> Before you start debugging, make sure the surrounding area is clear and that you're already familiar with basic Ubuntu and ROS2 commands. Otherwise, you risk having to repeatedly repair the robot's hardware and software.
 
-## 文档与支持
-具体使用细节和机器人相关文档如下，如遇问题，请先查阅文档。若问题无法解决，请携带日志寻求助教帮助。
+If a problem doesn't resolve itself, bring your logs and ask a TA for help.
 
-- 机器人厂家指导手册：[https://doc.iqr-robot.com/turtlebot4_user_manual/software/software.html](https://doc.iqr-robot.com/turtlebot4_user_manual/software/software.html)
-- 底盘文档：[https://iroboteducation.github.io/create3_docs](https://iroboteducation.github.io/create3_docs)
-- 深度相机：
-  - [https://github.com/IntelRealSense/realsense-ros](https://github.com/IntelRealSense/realsense-ros)
-  - [https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md#installing-the-packages](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md#installing-the-packages)
-- TurtleBot4教程（请使用Humble版本）：[https://turtlebot.github.io/turtlebot4-user-manual/overview/](https://turtlebot.github.io/turtlebot4-user-manual/overview/)
-- 机械臂：[https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros_interface/ros2/software_setup.html](https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros_interface/ros2/software_setup.html)
-- 陀螺仪：[https://github.com/ElettraSciComp/witmotion_IMU_ros/tree/ros2](https://github.com/ElettraSciComp/witmotion_IMU_ros/tree/ros2)
-- 激光雷达：[https://github.com/Slamtec/sllidar_ros2](https://github.com/Slamtec/sllidar_ros2)
+[^tb4]: [TurtleBot4 tutorials](https://turtlebot.github.io/turtlebot4-user-manual/overview/) (use the Humble version)
+[^create3]: [Create3 base documentation](https://iroboteducation.github.io/create3_docs)
+[^lidar]: [LiDAR](https://github.com/Slamtec/sllidar_ros2)
+[^arm]: [Arm](https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros_interface/ros2/software_setup.html)
+[^imu]: [IMU](https://github.com/ElettraSciComp/witmotion_IMU_ros/tree/ros2)
+[^camera]: Depth camera: [realsense-ros](https://github.com/IntelRealSense/realsense-ros), [install guide](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md#installing-the-packages)
+[^manufacturer-guide]: [Robot manufacturer's guide](https://doc.iqr-robot.com/turtlebot4_user_manual/software/software.html) (certificate currently expired)
+[^remote-connection]: [Three Ways of Remote Connection to the robot]({{ '/assets/project/remote_connection' | relative_url }})
+[^light-ring]: [Create3 Buttons and Light Ring](https://iroboteducation.github.io/create3_docs/hw/face/)

@@ -1,30 +1,69 @@
 ---
 layout: page
-title: Three Ways of Remote Connection to the robot
+title: Connecting to the Robot & Team Conventions
 description: Robot Connection, written by Siyuan Wang.
 nav_exclude: true
 ---
 
-[← Back](https://rpai-lab.github.io/EE211-24Fall/HW_and_Project/)
+[← Back]({{ '/course-materials/' | relative_url }})
 
 <br>
 
-# Three Ways of Remote Connection to the robot
+# Connecting to the Robot & Team Conventions
 
-> **For 2024Fall EE211 Course Project**
->
-> **Last Update:** 2024-10-15
+> Last Update: 2026-9-26
 
 <br>
 
-## 0. 开机
+## 0. Power On
 
-- 按下电源键
-- 给机器人上的小nuc开机
+- Press the power button on the chassis, or place the chassis on the charging dock — it boots on its own. The light ring spins white while booting, and a "happy sound" plays when it's ready.
+- The NUC on the pan-tilt has its own separate power button. Press it, then wait for Ubuntu to finish booting. The chassis being ready does **not** mean the NUC is ready — they are two separate machines.
 
-## 1. 配置NoMachine
+## 1. Connect via ssh (recommended)
 
-- 在你的电脑上安装NoMachine
+ssh supports multiple clients at once, so everyone in your group can be connected at the same time.
+
+If `ssh` is not found on your machine, install the client:
+
+```bash
+sudo apt install openssh-client
+```
+
+Then connect:
+
+```bash
+ssh <usr_name>@<ip>
+# e.g. ssh tony@<robot's WiFi IP>
+```
+
+### Shortcut: save the robot as an alias
+
+Typing the full address every time gets old. Open (or create) your ssh config with nano:
+
+```bash
+nano ~/.ssh/config
+```
+
+Add one block per robot, then save with `Ctrl+O`, exit with `Ctrl+X`:
+
+```
+Host robot
+    HostName <robot's WiFi IP>
+    User <usr_name>
+```
+
+Now `ssh robot` does the same thing as the full command.
+
+## 2. Write code with VSCode Remote-SSH (recommended)
+
+Install the **Remote SSH** extension in VSCode. It reads `~/.ssh/config`, so the aliases above show up directly — pick one and you get a full editing experience on the robot, just like working locally. This is what we recommend for writing code this semester.
+
+## 3. NoMachine (when you need a GUI)
+
+ssh only gives you a terminal. When you need a graphical interface — visualization, camera preview, that sort of thing — use NoMachine: it streams the NUC's whole desktop.
+
+- Download NoMachine for your OS: [https://download.nomachine.com/](https://download.nomachine.com/)
 
 ```bash
 sudo apt install ./<pkg_name>.deb
@@ -32,29 +71,49 @@ sudo apt install ./<pkg_name>.deb
 sudo dpkg -i ./<pkg_name>.deb
 ```
 
-- 确保你的PC和小车上的nuc处在同一局域网下，然后打开终端，检查是否能ping通：
+- Make sure your PC and the robot's NUC are on the same local network, then check you can ping it:
 
 ```bash
 ping <remote_ip>
-# e.g. ping 192.168.1.1
 ```
 
-- 如果能ping通，进入NoMachine连接，确保ip和用户名输对
+- If the ping succeeds, connect via NoMachine, making sure the IP and username are correct.
 
+⚠️ NoMachine accepts only one client at a time — if several people use it together you will fight over the mouse. Coordinate within your group.
 
-- 如果能ping通，但NoMachine远程桌面能进入但黑屏，新开一个终端ssh连接小车，执行一下命令，然后重新尝试连接NoMachine:
+- If the ping succeeds but the remote desktop connects to a black screen, ssh into the robot and run:
 
 ```bash
 sudo /etc/NX/nxserver --restart
 ```
 
-## 2. ssh连接
-> NoMachine只能连接一台客户端机器，因此一个组同时只有一个人可以使用远程桌面；但ssh支持多客户端。
+## 4. Last resort: borrow a monitor
 
-```bash
-ssh <usr_name>@<ip>
-# e.g. ssh tony@192.168.1.1
-```
+If neither ssh nor NoMachine works, come find a TA and borrow a monitor and keyboard/mouse, and plug them directly into the NUC.
 
-## 3. vscode - Remote SSH Plugin
-> 安装vsode Remote SSH插件，体验和在本地一样的远端代码编辑体验
+## 5. Network settings: `ROS_DOMAIN_ID` and `ROS_LOCALHOST_ONLY`
+
+For two machines to see each other over ROS2, two things must hold:
+
+1. **Turn `ROS_LOCALHOST_ONLY` off.** Setting it to `1` keeps ROS2 traffic on the local loopback — great for solo practice, but it makes your computer completely blind to the robot. For cross-machine work, remove it or set it to `0` in `~/.bashrc`.
+2. **Match `ROS_DOMAIN_ID`.** Each robot NUC is already configured with a unique domain ID — run `echo $ROS_DOMAIN_ID` on the robot to see it. Every computer in your group must be set to the same number. If they don't match, DDS discovery never happens and you receive nothing.
+
+## 6. Code conventions
+
+- **Manage your code with git on GitHub.** Create an **organization** for your group at [github.com/settings/organizations](https://github.com/settings/organizations) — one organization per group — and put your group's repository inside it. That's how your group syncs code with each other, and how you get back to an earlier version when something breaks.
+- **Keep your own code out of the robot's existing workspace.** The workspace already on the NUC (`~/ros2_ws`) holds the official drivers; editing it in place is a quick way to break the robot for everyone. Create your own workspace instead, one per student, all under a course folder:
+
+  ```
+  ~/
+  ├── ros2_ws/                  # already on the robot — official drivers, do not touch
+  │   └── src/
+  └── EE211_26Fall/
+      ├── {student0}_ws/
+      │   └── src/
+      ├── {student1}_ws/
+      │   └── src/
+      └── {student2}_ws/
+          └── src/
+  ```
+
+  Replace `{studentN}` with your own name, and put everything you write under that workspace's `src/`.
