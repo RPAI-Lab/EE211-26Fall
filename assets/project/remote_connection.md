@@ -5,7 +5,7 @@ description: Robot Connection, written by Siyuan Wang.
 nav_exclude: true
 ---
 
-[← Back]({{ '/course-materials/' | relative_url }})
+[← Back]({{ '/assets/lab/week4/week4-page' | relative_url }})
 
 <br>
 
@@ -14,11 +14,6 @@ nav_exclude: true
 > Last Update: 2026-9-26
 
 <br>
-
-## 0. Power On
-
-- Press the power button on the chassis, or place the chassis on the charging dock — it boots on its own. The light ring spins white while booting, and a "happy sound" plays when it's ready.
-- The NUC on the pan-tilt has its own separate power button. Press it, then wait for Ubuntu to finish booting. The chassis being ready does **not** mean the NUC is ready — they are two separate machines.
 
 ## 1. Connect via ssh (recommended)
 
@@ -79,13 +74,7 @@ ping <remote_ip>
 
 - If the ping succeeds, connect via NoMachine, making sure the IP and username are correct.
 
-⚠️ NoMachine accepts only one client at a time — if several people use it together you will fight over the mouse. Coordinate within your group.
-
-- If the ping succeeds but the remote desktop connects to a black screen, ssh into the robot and run:
-
-```bash
-sudo /etc/NX/nxserver --restart
-```
+⚠️ NoMachine accepts only one client at a time. Coordinate within your group.
 
 ## 4. Last resort: borrow a monitor
 
@@ -93,15 +82,13 @@ If neither ssh nor NoMachine works, come find a TA and borrow a monitor and keyb
 
 ## 5. Network settings: `ROS_DOMAIN_ID` and `ROS_LOCALHOST_ONLY`
 
-For two machines to see each other over ROS2, two things must hold:
-
-1. **Turn `ROS_LOCALHOST_ONLY` off.** Setting it to `1` keeps ROS2 traffic on the local loopback — great for solo practice, but it makes your computer completely blind to the robot. For cross-machine work, remove it or set it to `0` in `~/.bashrc`.
-2. **Match `ROS_DOMAIN_ID`.** Each robot NUC is already configured with a unique domain ID — run `echo $ROS_DOMAIN_ID` on the robot to see it. Every computer in your group must be set to the same number. If they don't match, DDS discovery never happens and you receive nothing.
+1. **Match `ROS_DOMAIN_ID`.** Each robot has its own ID (`echo $ROS_DOMAIN_ID` on the NUC); set every computer in your group to the same number.
+2. **Turn `ROS_LOCALHOST_ONLY` off.** Remove it from `~/.bashrc` or set it to `0`; otherwise ROS2 on your computer won't find the robot's topics.
 
 ## 6. Code conventions
 
-- **Manage your code with git on GitHub.** Create an **organization** for your group at [github.com/settings/organizations](https://github.com/settings/organizations) — one organization per group — and put your group's repository inside it. That's how your group syncs code with each other, and how you get back to an earlier version when something breaks.
-- **Keep your own code out of the robot's existing workspace.** The workspace already on the NUC (`~/ros2_ws`) holds the official drivers; editing it in place is a quick way to break the robot for everyone. Create your own workspace instead, one per student, all under a course folder:
+- **Use git.** Create one GitHub [organization](https://github.com/settings/organizations) per group and keep your group's repository there.
+- **Don't touch `~/ros2_ws`** on the NUC — it holds the official drivers. Each student creates their own workspace:
 
   ```
   ~/
@@ -116,4 +103,4 @@ For two machines to see each other over ROS2, two things must hold:
           └── src/
   ```
 
-  Replace `{studentN}` with your own name, and put everything you write under that workspace's `src/`.
+  Replace `{studentN}` with your name.
