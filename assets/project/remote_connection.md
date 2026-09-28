@@ -11,9 +11,17 @@ nav_exclude: true
 
 # Connecting to the Robot & Team Conventions
 
-> Last Update: 2026-9-26
+> Last Update: 2026-9-28
 
 <br>
+
+## 0. Login info
+
+| | |
+|---|---|
+| Username | `tony` |
+| Password | a single space |
+| IP | `192.168.8.xx`, where `xx` is your robot's number (121–130) |
 
 ## 1. Connect via ssh (recommended)
 
@@ -28,8 +36,8 @@ sudo apt install openssh-client
 Then connect:
 
 ```bash
-ssh <usr_name>@<ip>
-# e.g. ssh tony@<robot's WiFi IP>
+ssh tony@192.168.8.xx
+# e.g. robot 121: ssh tony@192.168.8.121
 ```
 
 ### Shortcut: save the robot as an alias
@@ -44,21 +52,31 @@ Add one block per robot, then save with `Ctrl+O`, exit with `Ctrl+X`:
 
 ```
 Host robot
-    HostName <robot's WiFi IP>
-    User <usr_name>
+    HostName 192.168.8.xx
+    User tony
 ```
 
 Now `ssh robot` does the same thing as the full command.
 
-## 2. Write code with VSCode Remote-SSH (recommended)
+To skip the password too, copy your key to the robot once (run `ssh-keygen` first if you don't have a key yet):
 
-Install the **Remote SSH** extension in VSCode. It reads `~/.ssh/config`, so the aliases above show up directly — pick one and you get a full editing experience on the robot, just like working locally. This is what we recommend for writing code this semester.
+```bash
+ssh-copy-id robot
+```
 
-## 3. NoMachine (when you need a GUI)
+### Write code with VSCode Remote-SSH
+
+Install the **Remote - SSH** extension; the aliases above show up in it directly.
+
+<img src="{{ '/assets/project/imgs/vscode-remote-ssh.jpg' | relative_url }}" alt="Remote - SSH extension in the VSCode marketplace" style="zoom:50%;" />
+
+## 2. NoMachine (when you need a GUI)
 
 ssh only gives you a terminal. When you need a graphical interface — visualization, camera preview, that sort of thing — use NoMachine: it streams the NUC's whole desktop.
 
 - Download NoMachine for your OS: [https://download.nomachine.com/](https://download.nomachine.com/)
+
+<img src="{{ '/assets/project/imgs/nomachine-download.jpg' | relative_url }}" alt="NoMachine download page" style="zoom:40%;" />
 
 ```bash
 sudo apt install ./<pkg_name>.deb
@@ -69,23 +87,23 @@ sudo dpkg -i ./<pkg_name>.deb
 - Make sure your PC and the robot's NUC are on the same local network, then check you can ping it:
 
 ```bash
-ping <remote_ip>
+ping 192.168.8.xx
 ```
 
 - If the ping succeeds, connect via NoMachine, making sure the IP and username are correct.
 
 ⚠️ NoMachine accepts only one client at a time. Coordinate within your group.
 
-## 4. Last resort: borrow a monitor
+## 3. Last resort: borrow a monitor
 
 If neither ssh nor NoMachine works, come find a TA and borrow a monitor and keyboard/mouse, and plug them directly into the NUC.
 
-## 5. Network settings: `ROS_DOMAIN_ID` and `ROS_LOCALHOST_ONLY`
+## 4. ROS2 environment variables: `ROS_DOMAIN_ID` and `ROS_LOCALHOST_ONLY`
 
 1. **Match `ROS_DOMAIN_ID`.** Each robot has its own ID (`echo $ROS_DOMAIN_ID` on the NUC); set every computer in your group to the same number.
 2. **Turn `ROS_LOCALHOST_ONLY` off.** Remove it from `~/.bashrc` or set it to `0`; otherwise ROS2 on your computer won't find the robot's topics.
 
-## 6. Code conventions
+## 5. Code conventions
 
 - **Use git.** Create one GitHub [organization](https://github.com/settings/organizations) per group and keep your group's repository there.
 - **Don't touch `~/ros2_ws`** on the NUC — it holds the official drivers. Each student creates their own workspace:
