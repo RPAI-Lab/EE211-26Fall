@@ -202,8 +202,8 @@ Click any box for the official tutorial on that piece:
 ## 3. Learn to use `topic`
 
 Implement simple `publisher` and `subscriber` with:
-- c++ <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Cpp-Publisher-And-Subscriber.html)</span>
 - python <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html)</span>
+- c++ <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Cpp-Publisher-And-Subscriber.html)</span>
 
 <br>
 

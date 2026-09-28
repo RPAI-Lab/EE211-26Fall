@@ -33,11 +33,7 @@ The robot used in this project is a modified TurtleBot4[^tb4], built on a Create
 - Charging takes a while, so plug the robot in promptly after each day's use.
 - Charging stations are set up where the robots are stored, with enough outlets for all of them.
 
-<img src="{{ '/assets/project/imgs/nuc-power-button.jpg' | relative_url }}" alt="NUC power button" style="zoom:50%;" />
-<img src="{{ '/assets/project/imgs/chassis-power-button.jpg' | relative_url }}" alt="chassis power button" style="zoom:50%;" />
 <img src="{{ '/assets/project/imgs/light-ring.gif' | relative_url }}" alt="chassis light ring spinning white during boot" style="zoom:50%;" />
-<img src="{{ '/assets/project/imgs/robot-on-dock.jpg' | relative_url }}" alt="robot placed on charging dock" style="zoom:50%;" />
-<img src="{{ '/assets/project/imgs/chargers.jpg' | relative_url }}" alt="chassis dock and NUC charger side by side" style="zoom:50%;" />
 
 ## Use & Debugging
 - To debug: ssh into the NUC first (lets everyone in your group connect at once); NoMachine if you need a GUI; borrowing a monitor from your TA is the last resort.[^remote-connection]
