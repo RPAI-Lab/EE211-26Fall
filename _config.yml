@@ -18,7 +18,7 @@ tagline: Course Website
 description: Website for Course EE211
 author: Siyuan Wang
 baseurl: '/EE211-26Fall' # the subpath of your site, e.g. /blog
-url: 'https://github.com/RPAI-Lab' # the base hostname & protocol for your site, e.g. http://example.com
+url: 'https://rpai-lab.github.io' # the base hostname & protocol for your site, e.g. http://example.com
 exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "dev-readme.md", "preview.sh", "vendor", "_modules_pending"]
 
 # Theme settings

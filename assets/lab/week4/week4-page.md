@@ -11,7 +11,7 @@ nav_exclude: true
 
 # Meet Your Robot & ROS2 Topics
 
-> Last Update: 2026-9-26
+> Last Update: 2026-10-8
 
 <br>
 
@@ -214,6 +214,10 @@ Click any box for the official tutorial on that piece:
 Implement simple `publisher` and `subscriber` with:
 - python <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html)</span>
 - c++ <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Cpp-Publisher-And-Subscriber.html)</span>
+
+📹 [video recording - part 1](https://meeting.tencent.com/crm/l7k9gPQdc0)
+
+📹 [video recording - part 2](https://meeting.tencent.com/crm/2rmWkrQX9e)
 
 <br>
 

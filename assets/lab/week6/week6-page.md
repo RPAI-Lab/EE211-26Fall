@@ -9,35 +9,40 @@ nav_exclude: true
 
 <br>
 
-# Custom Interface, Param, Launch
+# Service, Custom Interface, Launch, Param
 
-> Last Update: 2025-10-7
+> Last Update: 2026-10-8
 
 <br>
 
+## 1. Learn to use `service`
 
-## 1. Custom `msg` and `srv` file
+Implement simple `server` and `client` in the package you created last week:
+- python <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Service-And-Client.html)</span>
+- c++ <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Cpp-Service-And-Client.html)</span>
+
+## 2. Custom `msg` and `srv` file
 
 You may need custom data interface for your project, try customizing one if needed.
 
 - Custom `msg` and `srv` <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html)</span>
 
-## 2. Parameters
-
-ROS2 Parameters are helpful sometimes:
-- c++ <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Using-Parameters-In-A-Class-CPP.html#)</span>
-- python <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Using-Parameters-In-A-Class-Python.html)</span>
-
-<br>
-
-Here is a ros2 package that helps dynamically changing params interactively, try it if you are interested <span style="float: right;"> 🛠️ [dynamic_param](https://github.com/syw-robotics/dynamic_param) </span>
-
 ## 3. Launch several nodes at the same time
 
 You may need to start several ros2 nodes together, launch files will help.
 
-- Launch file <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Launch-Main.html)</span>
+- Creating a launch file <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Creating-Launch-Files.html)</span>
+- Integrating launch files into ROS 2 packages <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Launch-system.html)</span>
 
+Full launch tutorials for further reading: [Launch](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Launch-Main.html)
+
+## 4. Parameters
+
+ROS2 Parameters are helpful sometimes:
+- python <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Using-Parameters-In-A-Class-Python.html)</span>
+- c++ <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Using-Parameters-In-A-Class-CPP.html)</span>
+
+Here is a ros2 package that helps dynamically changing params interactively, try it if you are interested <span style="float: right;"> 🛠️ [dynamic_param](https://github.com/syw-robotics/dynamic_param) </span>
 
 <br>
 

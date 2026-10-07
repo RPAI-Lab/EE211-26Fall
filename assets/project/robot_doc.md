@@ -157,6 +157,6 @@ If neither ssh nor NoMachine works, come find a TA and borrow a monitor and keyb
 [^arm]: [Arm](https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros_interface/ros2/software_setup.html)
 [^imu]: [IMU](https://github.com/ElettraSciComp/witmotion_IMU_ros/tree/ros2)
 [^camera]: Depth camera: [realsense-ros](https://github.com/IntelRealSense/realsense-ros), [install guide](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md#installing-the-packages)
-[^manufacturer-guide]: [Robot manufacturer's guide](https://doc.iqr-robot.com/turtlebot4_user_manual/software/software.html)
+[^manufacturer-guide]: [Robot manufacturer's guide](http://doc.iqr-robot.com/turtlebot4_user_manual/software/software.html)
 [^light-ring]: [Create3 Buttons and Light Ring](https://iroboteducation.github.io/create3_docs/hw/face/)
 [^lab-safety]: [南方科技大学实验室安全管理暂行办法 (SUSTech Lab Safety Management Regulations)](https://static.crf.sustech.edu.cn/upload/file/20200909/15996422828134.pdf)

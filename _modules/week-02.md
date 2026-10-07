@@ -2,7 +2,7 @@
 title: Week 2
 ---
 
-Sep 16
+Sep 15
 : **Lecture**{: .label }<span style="color: gray; font-weight: normal;">02. Trajectory Generation</span>
   : [Slides]({{ '/assets/slides/lecture/EE211-26Fall-Lecture2.pdf' | relative_url }})
 : **Lab**{: .label .label-purple }<span style="color: gray; font-weight: normal;">02. Shell Commands</span>

@@ -11,7 +11,7 @@ nav_exclude: true
 
 # ROS2 Basic Setup
 
-> Last Update: 2026-9-22
+> Last Update: 2026-10-8
 
 <br>
 
@@ -43,6 +43,10 @@ nav_exclude: true
 - Understanding `nodes` <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)</span>
 - Understanding `topics` <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html)</span>
 - Understanding `services` <span style="float: right;">📑 [See](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Services/Understanding-ROS2-Services.html)</span>
+
+📹 [video recording - part 1](https://meeting.tencent.com/crm/NAb4xyzR59)
+
+📹 [video recording - part 2](https://meeting.tencent.com/crm/2yd1qVAr3e)
 
 <br>
 
