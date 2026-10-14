@@ -44,6 +44,12 @@ ROS2 Parameters are helpful sometimes:
 
 Here is a ros2 package that helps dynamically changing params interactively, try it if you are interested <span style="float: right;"> 🛠️ [dynamic_param](https://github.com/syw-robotics/dynamic_param) </span>
 
+📹 [video recording - part 1](https://source.meeting.qq.com/crm/KEr67LZd3d)
+
+📹 [video recording - part 2](https://source.meeting.qq.com/crm/KW63yJpB91)
+
+📹 [video recording - part 3](https://source.meeting.qq.com/crm/KW63w3jVbc)
+
 <br>
 
 <br>
