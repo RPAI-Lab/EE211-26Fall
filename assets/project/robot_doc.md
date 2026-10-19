@@ -100,14 +100,13 @@ Install the **Remote - SSH** extension; the aliases above show up in it directly
 
 ssh only gives you a terminal. When you need a graphical interface — visualization, camera preview, that sort of thing — use NoMachine: it streams the NUC's whole desktop.
 
-- Download NoMachine for your OS: [https://download.nomachine.com/](https://download.nomachine.com/)
-
-<img src="{{ '/assets/project/imgs/nomachine-download.jpg' | relative_url }}" alt="NoMachine download page" style="zoom:40%;" />
+- The NUC runs NoMachine **8.8.1**. Install the same version; the latest one from the official site cannot connect to it.
+- Ubuntu (x86_64):
 
 ```bash
-sudo apt install ./<pkg_name>.deb
-# or
-sudo dpkg -i ./<pkg_name>.deb
+curl -sL -c /tmp/nx.cookie -b /tmp/nx.cookie -o /dev/null https://jjyczursn9.feishu.cn/file/CPSPbNvXpoLcONx6rzYcyWHSnqf
+curl -L -b /tmp/nx.cookie -o nomachine_8.8.1_1_amd64.deb https://jjyczursn9.feishu.cn/space/api/box/stream/download/all/CPSPbNvXpoLcONx6rzYcyWHSnqf/
+sudo apt install ./nomachine_8.8.1_1_amd64.deb
 ```
 
 - Make sure your PC and the robot's NUC are on the same local network, then check you can ping it:
