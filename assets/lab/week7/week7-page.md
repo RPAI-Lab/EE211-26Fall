@@ -305,6 +305,10 @@ if __name__ == '__main__':
 
 <script src="{{ '/assets/lab/week7/cv-demo.js' | relative_url }}"></script>
 
+📹 [video recording - part 1](https://meeting.tencent.com/crm/l5GxdXmQ53)
+
+📹 [video recording - part 2](https://meeting.tencent.com/crm/2MYnvQn67a)
+
 <br>
 
 <br>
