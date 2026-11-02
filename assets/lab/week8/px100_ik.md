@@ -6,7 +6,7 @@ nav_exclude: true
 ---
 
 
-[← Back](https://rpai-lab.github.io/EE211-25Fall/assets/lab/week8/week8-page/)
+[← Back]({{ '/assets/lab/week8/week8-page' | relative_url }})
 
 <br>
 

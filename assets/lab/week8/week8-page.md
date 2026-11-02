@@ -11,7 +11,7 @@ nav_exclude: true
 
 # Robotic Arm Tutorial
 
-> Last Update: 2025-10-24
+> Last Update: 2026-11-02
 
 <br>
 
@@ -25,15 +25,15 @@ nav_exclude: true
 
 ## 2. TF2: Transformation Manager in ROS2
 
-📑 [See](https://rpai-lab.github.io/EE211-25Fall/assets/lab/week8/tf2_intro/)
+📑 [See]({{ '/assets/lab/week8/tf2_intro' | relative_url }})
 
 ## 3. Inverse Kinematics
 
-📑 [See](https://rpai-lab.github.io/EE211-25Fall/assets/lab/week8/px100_ik/)
+📑 [See]({{ '/assets/lab/week8/px100_ik' | relative_url }})
 
 ## 4. AruCo Code: You will like it
 
-📑 [See](https://rpai-lab.github.io/EE211-25Fall/assets/lab/week8/aruco/)
+📑 [See]({{ '/assets/lab/week8/aruco' | relative_url }})
 
 <br>
 
